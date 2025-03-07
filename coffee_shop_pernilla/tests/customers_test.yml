@@ -1,0 +1,13 @@
+version: 2
+ 
+models:
+  - name: customers
+    description: '{{ doc("customers") }}'
+    columns:
+      - name: customer_id
+        description: Primary key of the model
+        tests:
+          - unique
+          - not_null
+  - name: monthly_customers
+    description: '{{ doc("monthly_customers") }}'
