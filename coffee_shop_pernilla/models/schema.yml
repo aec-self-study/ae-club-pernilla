@@ -17,6 +17,9 @@ sources:
             tests:
               - unique
               - not_null
+          - name: email
+            tests:
+             - email_format
  
       - name: orders
         columns:
@@ -24,6 +27,9 @@ sources:
             tests:
               - unique
               - not_null
+          - name: total
+            tests:
+              - positive_total
 
       - name: order_items
         columns:
