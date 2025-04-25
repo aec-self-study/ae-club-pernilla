@@ -37,3 +37,9 @@ models:
       +materialized: table
     report:
       +materialized: table
+
+vars:
+  github_source:
+    github_database: analytics-engineers-club
+    github_schema: github 
+  github__using_repo_team: false

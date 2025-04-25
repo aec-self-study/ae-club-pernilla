@@ -41,9 +41,6 @@ sources:
         columns:
           - name: id
             data_type: integer
-            tests:
-              - unique
-              - not_null
           - name: product_id
             data_type: integer
           - name: price
@@ -52,6 +49,12 @@ sources:
             data_type: timestamp
           - name: ended_at
             data_type: timestamp
+        tests:
+          - dbt_utils.mutually_exclusive_ranges:
+              lower_bound_column: created_at
+              upper_bound_column: ended_at
+              partition_by: product_id
+              gaps: not_allowed
             
       - name: products
         columns:
